@@ -1,0 +1,165 @@
+:root {
+  --gold: #D4AF37;
+  --black: #1A1A1A;
+  --white: #FFFFFF;
+  --gradient: linear-gradient(45deg, var(--gold) 0%, #FFF8DC 50%, var(--gold) 100%);
+}
+.particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+.hero-title {
+  font-size: 10vw;
+  font-weight: 900;
+  background: linear-gradient(45deg, var(--gold) 0%, #FFF8DC 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #D4AF37; 
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+  margin: 0;
+}
+.hero-subtitle {
+  font-size: 2rem;
+  color: var(--white);
+  margin: 2rem 0;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.cta-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.cta-button {
+  padding: 1.5rem 3rem;
+  border: 2px solid var(--gold);
+  font-size: 1.2rem;
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.showcase-section {
+  min-height: 100vh;
+  padding: 8rem 4rem;
+  background: linear-gradient(to bottom, var(--black), #000);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.service-card {
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid var(--gold);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.section-title {
+  font-size: 3rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Add at the top of your main.css */
+body {
+  cursor: none !important;
+  margin: 0;
+  padding: 0;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+.cursor {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--gold);
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: 0.2s ease-out;
+  mix-blend-mode: difference;
+}
+
+/* Hover states for interactive elements */
+[data-hover] {
+  cursor: none;
+}
+
+[data-hover]:hover ~ .cursor {
+  transform: scale(2);
+}
+
+[data-hover]:hover ~ .cursor-follower {
+  transform: scale(1.5);
+}
