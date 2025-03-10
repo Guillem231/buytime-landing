@@ -6,7 +6,9 @@ import FutureSection from './components/Future';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import BlackHole from './components/BlackHole';
-import CountdownFooter  from './components/Countdown';
+import CountdownFooter from './components/Countdown';
+import MobileBlocker from './components/MobileBlocker';
+
 import './styles/main.css';
 
 
@@ -27,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <MobileBlocker /> 
         <CustomCursor />
         <Routes>
           <Route path="/" element={<HomePage />} />

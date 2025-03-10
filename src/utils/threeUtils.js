@@ -22,7 +22,7 @@ export const createBlackHole = (scene, shader) => {
 };
 
 export const createParticleSystem = (scene, shader) => {
-  const particleCount = 15000;
+  const particleCount = 10000;
   const particleGeometry = new THREE.BufferGeometry();
   const particlePositions = new Float32Array(particleCount * 3);
   const particleSizes = new Float32Array(particleCount);
