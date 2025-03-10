@@ -1,0 +1,471 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.title {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.title h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--gold) 0%, #FFF8DC 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+
+.transactionContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.timeCard {
+  position: relative;
+  width: 380px;
+  min-height: 450px;
+  background: rgba(10, 10, 30, 0.7);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeCard:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.8s;
+  z-index: 0;
+}
+
+.timeCard h3 {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.hologramEffect {
+  margin-top: 1rem;
+  position: relative;
+  flex: 1;
+}
+
+.needText {
+  display: block;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.typingContainer {
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(212, 175, 55, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typingContainer {
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(212, 175, 55, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typingText {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.4s ease-out, opacity 0.3s ease-out, visibility 0s 0.3s;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+}
+
+.textContent {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.typingText.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform 0.4s ease-out, opacity 0.3s ease-out, visibility 0s;
+}
+
+.typingText.active .textContent {
+    animation: textReveal 1.2s steps(40, end) forwards;
+}
+
+.interactionHint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 10px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.hintIcon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  animation: rotate 4s infinite linear;
+}
+
+.interactionHint p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.connectionContainer {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.connectionCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.valueProposition {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(10, 10, 30, 0.6);
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.platformStats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.statNumber {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.serviceMatches {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    min-height: 200px;
+}
+
+.serviceMatch {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.serviceMatches.active .serviceMatch {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.providerInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.providerName {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.rating {
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+.service {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.availabilityDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4CAF50;
+    margin-right: 6px;
+    box-shadow: 0 0 10px #4CAF50;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.matchConfirmation {
+    margin-top: 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    transition-delay: 0.5s;
+}
+
+.matchConfirmation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.confirmButton {
+    background: linear-gradient(45deg, var(--gold) 0%, #FFC107 100%);
+    color: rgba(0, 0, 0, 0.8);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.confirmButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+.confirmButton:active {
+    transform: translateY(1px);
+}
+
+/* Animaciones */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes textReveal {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Efecto de brillo en tarjetas al pasar el ratón */
+.timeCard:hover .cardGlow,
+.timeCard:focus-within .cardGlow {
+    opacity: 1;
+}
+
+/* Ajustes responsive */
+@media (max-width: 1200px) {
+    .transactionContainer {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .timeCard {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    .connectionContainer {
+        width: 90%;
+        max-width: 450px;
+        height: 200px;
+        order: -1;
+    }
+
+    .title h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1rem;
+    }
+
+    .title h2 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .statNumber {
+        font-size: 1.4rem;
+    }
+
+    .timeCard {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title h2 {
+        font-size: 2rem;
+    }
+
+    .typingContainer {
+        height: 100px;
+    }
+
+    .typingText {
+        font-size: 1.4rem;
+    }
+
+    .confirmButton {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .serviceMatch {
+        padding: 0.8rem;
+    }
+}

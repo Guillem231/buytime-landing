@@ -1,0 +1,31 @@
+import { useEffect } from 'react';
+
+const useAnimation = (animationFrameRef, cameraRef, mouseRef, centerRef) => {
+  useEffect(() => {
+    const animate = () => {
+      animationFrameRef.current = requestAnimationFrame(animate);
+      
+      if (cameraRef.current) {
+        cameraRef.current.position.x += (mouseRef.current.x - cameraRef.current.position.x) * 0.05;
+        cameraRef.current.position.y += (-mouseRef.current.y - cameraRef.current.position.y) * 0.05;
+        cameraRef.current.lookAt(centerRef.current);
+      }
+      
+      if (window.renderer && window.scene && cameraRef.current) {
+        window.renderer.render(window.scene, cameraRef.current);
+      }
+    };
+    
+    animate();
+    
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [animationFrameRef, cameraRef, mouseRef, centerRef]);
+  
+  return null;
+};
+
+export default useAnimation;

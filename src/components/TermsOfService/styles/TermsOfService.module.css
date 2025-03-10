@@ -1,0 +1,298 @@
+.termsOfServicePage {
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.titleParticlesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.termsContent {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 2rem 80px;
+  z-index: 5;
+}
+
+.headerContainer {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.termsTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--gold) 0%, #FFF8DC 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+}
+
+.updatedDate {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.titleSeparator {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.termsLayout {
+  display: flex;
+  gap: 3rem;
+}
+
+.termsNav {
+  width: 250px;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  height: fit-content;
+}
+
+.navContainer {
+background: rgba(60, 60, 63, 0.7);  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s;
+}
+
+.backButton:hover {
+  color: var(--gold);
+}
+
+.backIcon {
+  margin-right: 6px;
+}
+
+.navContainer h3 {
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.navContainer h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.navLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks li {
+  margin-bottom: 0.8rem;
+}
+
+.navLinks li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  display: block;
+  padding: 6px 0;
+  position: relative;
+}
+
+.navLinks li a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.navLinks li.active a {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.navLinks li.active a:before {
+content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.termsText {
+    flex: 1;
+    background: rgba(41, 41, 42, 0.6);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.termsSection {
+    margin-bottom: 3rem;
+}
+
+.termsSection:last-child {
+    margin-bottom: 0;
+}
+
+.termsSection h2 {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.termsSection h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    opacity: 0.7;
+}
+
+.sectionContent {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+}
+
+.sectionContent p {
+    margin-bottom: 1.2rem;
+}
+
+.sectionContent ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.sectionContent li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+    .termsLayout {
+        flex-direction: column;
+    }
+
+    .termsNav {
+        width: 100%;
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .termsTitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .termsContent {
+        padding: 100px 1rem 60px;
+    }
+
+    .termsTitle {
+        font-size: 2rem;
+    }
+
+    .termsSection h2 {
+        font-size: 1.5rem;
+    }
+
+    .termsText {
+        padding: 1.5rem;
+    }
+
+    .navContainer {
+        padding: 1.2rem;
+    }
+
+    .sectionContent {
+        font-size: 0.95rem;
+    }
+
+    .navLinks li a {
+        font-size: 0.9rem;
+        padding: 5px 0;
+    }
+
+    .backButton {
+        font-size: 0.85rem;
+    }
+
+    .updatedDate {
+        font-size: 0.9rem;
+    }
+
+    .headerContainer {
+        margin-bottom: 2rem;
+    }
+
+    .titleSeparator {
+        max-width: 200px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    .termsTitle {
+        font-size: 1.8rem;
+    }
+
+    .termsSection h2 {
+        font-size: 1.3rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .termsSection h2:after {
+        width: 40px;
+    }
+
+    .termsText {
+        padding: 1.2rem;
+    }
+
+    .sectionContent {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .sectionContent ul {
+        padding-left: 1.2rem;
+    }
+}
