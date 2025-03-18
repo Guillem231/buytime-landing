@@ -54,8 +54,8 @@ const useKinectScene = (containerRef, cameraRef, showGUI) => {
     texture.generateMipmaps = false;
     
     // Adjust resolution based on device
-    const width = isMobile ? 220 : 640;
-    const height = isMobile ? 240 : 480;
+    const width = isMobile ? 320 : 640;
+    const height = isMobile ? 340 : 480;
     const nearClipping = 850;
     const farClipping = isMobile ? 5000 :4000;
     
@@ -80,7 +80,7 @@ const useKinectScene = (containerRef, cameraRef, showGUI) => {
     geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
     
     // Use a more visible point size for mobile
-    const pointSize = isMobile ? 9 : 2.5;
+    const pointSize = isMobile ? 4 : 2.5;
     
     const material = new THREE.ShaderMaterial({
       uniforms: {
