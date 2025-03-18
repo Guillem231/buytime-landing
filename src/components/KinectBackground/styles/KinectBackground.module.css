@@ -5,4 +5,17 @@
   width: 100%;
   height: 100%;
   z-index: -1;
+  touch-action: none;
+  /* Prevent browser handling of touch events */
+  pointer-events: auto;
+  /* Ensure touch events are captured */
+}
+
+@media (max-width: 768px) {
+  .container {
+    z-index: -1;
+    /* Ensure it's behind content but still visible */
+    background-color: #000000;
+    /* Ensure there's a black background at minimum */
+  }
 }
