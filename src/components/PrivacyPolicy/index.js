@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
               content={
                 <>
                   <p>
-                    At BuyTime, we respect your privacy and are committed to protecting your personal data. 
+                    At BuyTimeApp, we respect your privacy and are committed to protecting your personal data. 
                     This Privacy Policy will inform you about how we look after your personal data when you 
                     visit our website and tell you about your privacy rights and how the law protects you.
                   </p>
@@ -149,7 +149,7 @@ const PrivacyPolicy = () => {
                   <ul>
                     <li>To comply with any court order, law, or legal process.</li>
                     <li>To enforce or apply our terms of use and other agreements.</li>
-                    <li>If we believe disclosure is necessary to protect the rights, property, or safety of BuyTime, our customers, or others.</li>
+                    <li>If we believe disclosure is necessary to protect the rights, property, or safety of BuyTimeApp, our customers, or others.</li>
                   </ul>
                 </>
               }

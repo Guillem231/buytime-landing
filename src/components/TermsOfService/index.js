@@ -62,8 +62,8 @@ const TermsOfService = () => {
               content={
                 <>
                   <p>
-                    Welcome to BuyTime! These Terms of Service ("Terms") govern your access to and use of 
-                    the BuyTime website, services, and applications (collectively, the "Services").
+                    Welcome to BuyTimeApp! These Terms of Service ("Terms") govern your access to and use of 
+                    the BuyTimeApp website, services, and applications (collectively, the "Services").
                   </p>
                   <p>
                     Please read these Terms carefully before using our Services. By accessing or using our Services, 
@@ -134,7 +134,7 @@ const TermsOfService = () => {
               content={
                 <>
                   <p>
-                    BuyTime provides a platform that allows users to trade time-based services. Our Services are subject to 
+                    BuyTimeApp provides a platform that allows users to trade time-based services. Our Services are subject to 
                     change without notice. We reserve the right to modify, suspend, or discontinue the Services at any time, 
                     without notice or liability to you.
                   </p>
@@ -157,12 +157,12 @@ const TermsOfService = () => {
                 <>
                   <p>
                     The Services and its original content, features, and functionality are and will remain the exclusive property 
-                    of BuyTime and its licensors. The Services are protected by copyright, trademark, and other laws of both the 
+                    of BuyTimeApp and its licensors. The Services are protected by copyright, trademark, and other laws of both the 
                     United States and foreign countries.
                   </p>
                   <p>
                     Our trademarks and trade dress may not be used in connection with any product or service without the prior 
-                    written consent of BuyTime.
+                    written consent of BuyTimeApp.
                   </p>
                   <p>
                     You agree not to reproduce, duplicate, copy, sell, resell, or exploit any portion of the Services, use of the 
@@ -185,7 +185,7 @@ const TermsOfService = () => {
                     <li>To exploit, harm, or attempt to exploit or harm minors in any way.</li>
                     <li>To transmit any material that is defamatory, obscene, indecent, abusive, offensive, harassing, violent, 
                         hateful, inflammatory, or otherwise objectionable.</li>
-                    <li>To impersonate or attempt to impersonate BuyTime, a BuyTime employee, another user, or any other person or entity.</li>
+                    <li>To impersonate or attempt to impersonate BuyTimeApp, a BuyTimeApp employee, another user, or any other person or entity.</li>
                     <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services.</li>
                     <li>To attempt to bypass any security measures or features on our platform.</li>
                     <li>To use any robot, spider, or other automatic device, process, or means to access the Services for any purpose.</li>
@@ -204,11 +204,11 @@ const TermsOfService = () => {
                 <>
                   <p>
                     YOUR USE OF THE SERVICES IS AT YOUR SOLE RISK. THE SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. 
-                    BUYTIME EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+                    BUYTIMEAPP EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
                     THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
                   </p>
                   <p>
-                    BUYTIME MAKES NO WARRANTY THAT (i) THE SERVICES WILL MEET YOUR REQUIREMENTS, (ii) THE SERVICES WILL BE UNINTERRUPTED, 
+                    BUYTIMEAPP MAKES NO WARRANTY THAT (i) THE SERVICES WILL MEET YOUR REQUIREMENTS, (ii) THE SERVICES WILL BE UNINTERRUPTED, 
                     TIMELY, SECURE, OR ERROR-FREE, (iii) THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF THE SERVICES WILL BE ACCURATE 
                     OR RELIABLE, OR (iv) THE QUALITY OF ANY PRODUCTS, SERVICES, INFORMATION, OR OTHER MATERIAL PURCHASED OR OBTAINED 
                     BY YOU THROUGH THE SERVICES WILL MEET YOUR EXPECTATIONS.
@@ -223,7 +223,7 @@ const TermsOfService = () => {
               content={
                 <>
                   <p>
-                    IN NO EVENT SHALL BUYTIME, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS, BE LIABLE TO YOU FOR ANY DIRECT, 
+                    IN NO EVENT SHALL BUYTIMEAPP, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS, BE LIABLE TO YOU FOR ANY DIRECT, 
                     INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES WHATSOEVER RESULTING FROM (i) ERRORS, 
                     MISTAKES, OR INACCURACIES OF CONTENT, (ii) PERSONAL INJURY OR PROPERTY DAMAGE, (iii) UNAUTHORIZED ACCESS TO 
                     OR USE OF OUR SERVERS AND/OR ANY PERSONAL INFORMATION STORED THEREIN, (iv) INTERRUPTION OR CESSATION OF 

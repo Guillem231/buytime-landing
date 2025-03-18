@@ -6,7 +6,7 @@ const FooterBottom = () => {
   return (
     <div className={styles.footerBottom}>
       <div className={styles.copyright}>
-        © {new Date().getFullYear()} BuyTime. All rights reserved.
+        © {new Date().getFullYear()} BuyTimeApp. All rights reserved.
       </div>
       
       <div className={styles.socialLinks}>

@@ -1,3 +1,5 @@
+/* Añade estos estilos a tu Hero.module.css existente */
+
 .heroSection {
   position: relative;
   width: 100%;
@@ -19,8 +21,76 @@
   pointer-events: none;
 }
 
+/* Contenedor principal */
+.simpleTitleContainer {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Estilo del título */
+.simpleTitle {
+  font-family: 'Exo 2', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Estilo para "Buy" en blanco */
+.buyText {
+  color: #FFFFFF;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo para "Time" en dorado */
+.timeText {
+  color: #FFD700;
+  text-shadow: 
+    0 0 15px rgba(255, 215, 0, 0.7),
+    0 0 30px rgba(255, 215, 0, 0.4);
+  margin-left: -0.05em;
+}
+
+/* Estilo del subtítulo */
+.simpleSubtitle {
+  font-family: 'Exo 2', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .heroSection {
     height: 80vh;
+  }
+
+  .simpleTitle {
+    font-size: clamp(3rem, 10vw, 5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .simpleSubtitle {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    padding: 0 1rem;
   }
 }

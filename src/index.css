@@ -1,3 +1,6 @@
+/* Importar Exo 2 de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&display=swap');
+
 :root {
   --gold: #D4AF37;
   --black: #1A1A1A;
@@ -8,12 +11,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif; /* Aplicar Exo 2 como fuente principal */
 }
 
 body {
   background: var(--black);
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Exo 2', sans-serif; /* Reemplazar 'Inter' por 'Exo 2' */
   overflow-x: hidden;
   cursor: none;
 }

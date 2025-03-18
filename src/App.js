@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <MobileBlocker /> 
+        {/* <MobileBlocker />  */}
         <CustomCursor />
         <Routes>
           <Route path="/" element={<HomePage />} />
