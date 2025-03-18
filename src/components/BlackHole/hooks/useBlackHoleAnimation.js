@@ -26,9 +26,10 @@ const useBlackHoleAnimation = (canvasRef, interactionState, scrollProgress) => {
       alpha: true,
     });
     
-    const size = Math.min(window.innerWidth * 0.35, 400);
+    const size = Math.min(window.innerWidth * 0.25, 300);
     renderer.setSize(size, size);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0);
     rendererRef.current = renderer;
     
     const blackHole = createBlackHole(scene, BLACK_HOLE_SHADER);
@@ -125,31 +126,43 @@ const useBlackHoleAnimation = (canvasRef, interactionState, scrollProgress) => {
     }
   };
   
-  const updateBlackHoleIntensity = (state) => {
-    if (blackHoleRef.current && blackHoleRef.current.material.uniforms) {
-      let intensity = 1.0;
-      
-      switch (state) {
-        case 'prompt':
-          intensity = 1.8;
-          break;
-        case 'processing':
-          intensity = 2.0;
-          break;
-        case 'response':
-          intensity = 1.3;
-          break;
-        default:
-          intensity = 1.0;
-      }
-      
-      gsap.to(blackHoleRef.current.material.uniforms.intensity, {
-        value: intensity,
-        duration: 0.8,
-        ease: "power2.inOut"
-      });
+  
+const updateBlackHoleIntensity = (state) => {
+  if (blackHoleRef.current && blackHoleRef.current.material.uniforms) {
+    let intensity = 1.0;
+    let pulseDuration = 1.5; 
+    
+    switch (state) {
+      case 'prompt':
+        intensity = 1.4;
+        break;
+      case 'processing':
+        intensity = 1.6;
+        pulseDuration = 0.8; 
+        break;
+      case 'response':
+        intensity = 1.2;
+        break;
+      default:
+        intensity = 1.0;
     }
-  };
+    
+    gsap.to(blackHoleRef.current.material.uniforms.intensity, {
+      value: intensity,
+      duration: 0.8,
+      ease: "sine.inOut" 
+    });
+    
+    gsap.to(blackHoleRef.current.scale, {
+      x: 1.05, y: 1.05, z: 1.05,
+      duration: pulseDuration,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+  }
+};
+
   
   const animateParticles = (particles, time, state) => {
     const positions = particles.geometry.attributes.position.array;

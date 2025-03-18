@@ -18,6 +18,7 @@ const BlackHoleCanvas = ({ interactionState, scrollProgress }) => {
       className={styles.blackHoleContainer}
       onClick={interactionState === 'idle' ? handleBlackHoleClick : undefined}
     >
+      
       <canvas 
         ref={canvasRef} 
         className={styles.blackHoleCanvas}

@@ -33,7 +33,7 @@ const VoiceInput = ({ inputText, setInputText, processInput, resetInterface }) =
         {!recording && (
           <button
             onClick={resetInterface}
-            className={styles.cancelButton}
+            className={styles.actionButton}
           >
             Cancel
           </button>
@@ -42,7 +42,7 @@ const VoiceInput = ({ inputText, setInputText, processInput, resetInterface }) =
         {!recording && inputText && (
           <button
             onClick={() => processInput()}
-            className={styles.submitButton}
+            className={styles.actionButton}
           >
             Submit
           </button>

@@ -27,7 +27,7 @@ const TextInput = ({ inputText, setInputText, handleSubmit, resetInterface }) =>
         <button
           type="button"
           onClick={resetInterface}
-          className={styles.cancelButton}
+          className={styles.actionButton}
         >
           Cancel
         </button>
@@ -35,7 +35,7 @@ const TextInput = ({ inputText, setInputText, handleSubmit, resetInterface }) =>
         <button
           type="submit"
           disabled={!inputText.trim()}
-          className={`${styles.submitButton} ${!inputText.trim() ? styles.disabled : ''}`}
+          className={`${styles.actionButton} ${!inputText.trim() ? styles.disabled : ''}`}
         >
           Submit
         </button>

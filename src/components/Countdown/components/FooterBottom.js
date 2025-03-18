@@ -11,15 +11,12 @@ const FooterBottom = () => {
       
       <div className={styles.socialLinks}>
         <a href="#" className={styles.socialLink}>
-          <i className="fab fa-twitter"></i>
+          <i className="fab fa-youtube"></i>
         </a>
-        <a href="#" className={styles.socialLink}>
+        <a href="https://www.instagram.com/buytimeapp/?hl=es" className={styles.socialLink}>
           <i className="fab fa-instagram"></i>
         </a>
-        <a href="#" className={styles.socialLink}>
-          <i className="fab fa-facebook"></i>
-        </a>
-        <a href="#" className={styles.socialLink}>
+        <a href="https://www.linkedin.com/company/justbuytime/" className={styles.socialLink}>
           <i className="fab fa-linkedin"></i>
         </a>
       </div>

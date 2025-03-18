@@ -19,6 +19,7 @@ const BlackHole = () => {
 
   return (
     <div className={styles.blackHoleWrapper}>
+
       <div ref={containerRef} className={styles.blackHoleInterface}>
         <BlackHoleCanvas 
           interactionState={interactionState}
