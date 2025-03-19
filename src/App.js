@@ -8,6 +8,7 @@ import TermsOfService from './components/TermsOfService';
 import BlackHole from './components/BlackHole';
 import CountdownFooter from './components/Countdown';
 import MobileBlocker from './components/MobileBlocker';
+import MobileParticleBackground from './components/MobileParticleBackground';
 
 import './styles/main.css';
 
@@ -57,6 +58,7 @@ function App() {
       <BrowserRouter>
         {/* <MobileBlocker />  */}
         {!isMobile && <CustomCursor />}
+        {isMobile && <MobileParticleBackground />}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
