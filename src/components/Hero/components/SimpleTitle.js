@@ -32,7 +32,7 @@ const SimpleTitle = () => {
         <span className={styles.timeText}>TIME</span>
       </h1>
       <p className={styles.simpleSubtitle}>
-        Transform your time into infinite possibilities
+        join the time revolution
       </p>
     </div>
   );

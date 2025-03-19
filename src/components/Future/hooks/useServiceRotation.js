@@ -1,15 +1,39 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import services from '../data/servicesData';
 
 const useServiceRotation = (isVisible) => {
   const [activeService, setActiveService] = useState(0);
   const [matchActive, setMatchActive] = useState(false);
+  // Usando refs para tener control sobre los timers
+  const timersRef = useRef([]);
   
+  // Función para limpiar todos los timers
+  const clearAllTimers = () => {
+    timersRef.current.forEach(timer => {
+      if (timer.type === 'timeout') {
+        clearTimeout(timer.id);
+      } else if (timer.type === 'interval') {
+        clearInterval(timer.id);
+      }
+    });
+    timersRef.current = [];
+  };
+  
+  // Función segura para añadir timers
+  const addTimer = (id, type) => {
+    timersRef.current.push({ id, type });
+    return id;
+  };
+
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible) {
+      clearAllTimers();
+      return;
+    }
     
     // Reset state when component becomes visible
     setActiveService(0);
+    setMatchActive(false);
     
     // Fixed timing constants
     const initialDisplayTime = 5000; // 5 seconds to show initial content
@@ -20,33 +44,41 @@ const useServiceRotation = (isVisible) => {
     const matchTimer = setTimeout(() => {
       setMatchActive(true);
     }, transitionTime);
+    addTimer(matchTimer, 'timeout');
     
     // Start cycling after initial display period
     const cycleTimer = setTimeout(() => {
-      // Create a predictable interval for cycling through services
-      const serviceCycleInterval = setInterval(() => {
+      // Function to handle the service change cycle
+      const handleServiceCycle = () => {
         // Hide matches before changing service
         setMatchActive(false);
         
-        // Wait for transition out, then change service
-        setTimeout(() => {
+        // Change service after transition out
+        const changeServiceTimer = setTimeout(() => {
           setActiveService(prev => (prev + 1) % services.length);
           
           // Show matches for new service after transition
-          setTimeout(() => {
+          const showMatchesTimer = setTimeout(() => {
             setMatchActive(true);
           }, transitionTime / 2);
+          addTimer(showMatchesTimer, 'timeout');
         }, transitionTime / 2);
-      }, cycleTime + transitionTime);
+        addTimer(changeServiceTimer, 'timeout');
+      };
       
-      return () => clearInterval(serviceCycleInterval);
+      // Set the initial cycle
+      handleServiceCycle();
+      
+      // Create an interval for cycling through services
+      const intervalId = setInterval(handleServiceCycle, cycleTime + transitionTime);
+      addTimer(intervalId, 'interval');
+      
     }, initialDisplayTime);
+    addTimer(cycleTimer, 'timeout');
     
-    return () => {
-      clearTimeout(matchTimer);
-      clearTimeout(cycleTimer);
-    };
-  }, [isVisible, services.length]);
+    // Cleanup all timers when component unmounts or isVisible changes
+    return clearAllTimers;
+  }, [isVisible]);
   
   return { activeService, matchActive, services };
 };
