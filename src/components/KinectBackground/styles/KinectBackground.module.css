@@ -19,3 +19,22 @@
     /* Ensure there's a black background at minimum */
   }
 }
+
+.backgroundVideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: sepia(0.8) contrast(1.2) saturate(0.8) brightness(0.6);
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center 45%,
+      rgba(212, 175, 55, 0.05) 0%,
+      rgba(0, 0, 0, 0.7) 70%);
+}

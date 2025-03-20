@@ -50,6 +50,7 @@
 
 /* Estilo para "Buy" en blanco */
 .buyText {
+    font-weight: 100;
   color: #FFFFFF;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
@@ -76,6 +77,27 @@
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
   transition-delay: 0.2s;
+}
+
+.logoContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  height: 1.4em;
+}
+
+.logoImage {
+  height: 100%;
+  /* Altura igual a la de las letras */
+  width: auto;
+  /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  vertical-align: middle;
+  position: relative;
+  /* Ajusta la posición vertical si es necesario */
+  bottom: 0.05em;
 }
 
 /* Responsive */

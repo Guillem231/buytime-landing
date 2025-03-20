@@ -28,8 +28,17 @@ const SimpleTitle = () => {
   return (
     <div ref={containerRef} className={styles.simpleTitleContainer}>
       <h1 className={styles.simpleTitle}>
-        <span className={styles.buyText}>BUY</span>
-        <span className={styles.timeText}>TIME</span>
+        <span className={styles.buyText}>
+          A K R
+          <span className={styles.logoContainer}>
+            <img 
+              src="/images/akron.png" 
+              alt="O"
+              className={styles.logoImage}
+            />
+          </span>
+          N
+        </span>
       </h1>
       <p className={styles.simpleSubtitle}>
         join the time revolution

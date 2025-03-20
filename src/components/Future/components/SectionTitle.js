@@ -5,7 +5,7 @@ const SectionTitle = () => {
   return (
     <div className={styles.title}>
       <h2>The Future of Time</h2>
-      <p className={styles.subtitle}>A AI that transforms your time into value</p>
+      <p className={styles.subtitle}>An that transforms your time into value</p>
     </div>
   );
 };

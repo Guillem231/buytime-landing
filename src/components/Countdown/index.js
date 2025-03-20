@@ -4,11 +4,13 @@ import CountdownTimer from './components/CountdownTimer';
 import FooterBottom from './components/FooterBottom';
 import ContactOptions from './components/ContactOptions';
 import styles from './styles/Countdown.module.css';
-
+import { useDeviceDetector } from '../MobileBlocker/hooks/useDeviceDetector';
 const CountdownFooter = () => {
+  const { isMobile } = useDeviceDetector();
+  
   return (
     <footer className={styles.footer}>
-      <ParticleCanvas />
+      {!isMobile && <ParticleCanvas />}
       
       <div className={styles.footerContent}>
         <div className={styles.countdownContainer}>
