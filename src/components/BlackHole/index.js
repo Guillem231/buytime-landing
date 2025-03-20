@@ -14,7 +14,7 @@ const AnimatedLogo = () => {
     
     const pulseIntensity = 0.4;
     const glowIntensity = 0.4;
-    const baseScale = 1;
+    const baseScale = 0.8;
     
     let time = 0;
     
@@ -52,7 +52,7 @@ const AnimatedLogo = () => {
     <div className={styles.logoContainer}>
       <img
         ref={logoRef}
-        src="/images/akron.png"
+        src="/images/akron.svg"
         alt="Logo"
         className={styles.animatedLogo}
       />

@@ -85,7 +85,9 @@
   justify-content: center;
   vertical-align: middle;
   position: relative;
-  height: 1.4em;
+  height: 1.1em;
+    margin-left: 0.1em;
+      margin-right: 0.1em;
 }
 
 .logoImage {
@@ -97,7 +99,7 @@
   vertical-align: middle;
   position: relative;
   /* Ajusta la posición vertical si es necesario */
-  bottom: 0.05em;
+  
 }
 
 /* Responsive */

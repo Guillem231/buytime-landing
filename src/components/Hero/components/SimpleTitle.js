@@ -32,7 +32,7 @@ const SimpleTitle = () => {
           A K R
           <span className={styles.logoContainer}>
             <img 
-              src="/images/akron.png" 
+              src="/images/akron.svg" 
               alt="O"
               className={styles.logoImage}
             />
