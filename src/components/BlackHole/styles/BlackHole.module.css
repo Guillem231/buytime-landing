@@ -5,26 +5,117 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   overflow: hidden;
   padding: 4rem 0;
 }
 
 .blackHoleWrapper {
-    position: relative;
-    z-index: 5;
-    margin-bottom: 10rem;
-    min-height: 500px;
-    width: 100%;
+  position: relative;
+  z-index: 5;
+  margin-bottom: 10rem;
+  min-height: 500px;
+  width: 100%;
+}
+
+/* Visuales (logo + partículas) */
+.visualsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Logo container */
+.logoContainer {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.animatedLogo {
+  width: 45%;
+  max-width: 300px;
+  height: auto;
+  transition: filter 0.3s ease;
+  will-change: transform, filter;
+  transform-origin: center;
+}
+
+/* Partículas */
+.particlesContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background-color: rgba(218, 165, 32, 0.6);
+  border-radius: 50%;
+  width: 3px;
+  height: 3px;
+  animation: orbit 15s linear infinite, pulse 4s ease-in-out infinite;
+}
+
+/* Animación de órbita y pulso para las partículas */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(0deg) translateX(120px) rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.2) rotate(180deg) translateX(120px) rotate(-180deg);
+  }
+}
+
+/* Interface container - positioned BELOW the logo */
+.interfaceContainer {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 180px;
+  /* Espacio para dejar el logo arriba */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  z-index: 2;
 }
 
 /* Black hole container */
 .blackHoleContainer {
-    background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 50%;
-      backdrop-filter: blur(10px);
-  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
   cursor: pointer;
   z-index: 10;
   margin: 2rem 0;
@@ -38,17 +129,6 @@
 .blackHoleCanvas {
   display: block;
   border-radius: 50%;
-}
-
-/* Interface elements */
-.interfaceContainer {
-  max-width: 600px;
-  width: 100%;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 16px;
 }
 
 /* Prompt container */
@@ -124,7 +204,7 @@
 
 .cancelButton {
   background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.7);
   padding: 0.7rem 1.2rem;
   border-radius: 2rem;
@@ -140,7 +220,7 @@
 
 .submitButton {
   background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding: 0.7rem 1.5rem;
   border-radius: 2rem;
@@ -296,36 +376,38 @@
   letter-spacing: 2px;
   margin-bottom: 1rem;
 }
+
 .responseText {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 0 0 2rem;
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Interact prompt */
 .interactPrompt {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
-    border-radius: 50%;
-    padding: 2rem;
-    pointer-events: none;
-    animation: pulse 4s infinite ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  padding: 2rem;
+  pointer-events: none;
+  animation: pulse 4s infinite ease-in-out;
 }
 
 .interactText {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    letter-spacing: 2px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  letter-spacing: 2px;
 }
+
 .blurOverlay {
   position: absolute;
   top: 0;
@@ -340,103 +422,111 @@
   pointer-events: none;
 }
 
-.blackHoleInterface {
-  position: relative;
-  z-index: 1;
-}
-
 /* Animations */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse {
-    0% {
-        opacity: 0.4;
-        transform: scale(1);
-    }
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
 
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 
-    100% {
-        opacity: 0.4;
-        transform: scale(1);
-    }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
 }
 
 @keyframes blink {
 
-    0%,
-    100% {
-        opacity: 0;
-    }
+  0%,
+  100% {
+    opacity: 0;
+  }
 
-    50% {
-        opacity: 1;
-    }
+  50% {
+    opacity: 1;
+  }
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .blackHoleContainer {
-        transform: scale(0.9);
-    }
+  .interfaceContainer {
+    margin-top: 150px;
+    /* Menos espacio en tablets */
+  }
 
-    .promptBox {
-        padding: 1.2rem;
-    }
+  .logoContainer {
+    top: 20%;
+    /* Logo más arriba en tablets */
+  }
 
-    .buttonContainer {
-        flex-direction: column;
-        gap: 1rem;
-    }
+  .buttonContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .actionButton,
-    .submitButton,
-    .cancelButton {
-        width: 100%;
-    }
+  .actionButton,
+  .submitButton,
+  .cancelButton {
+    width: 100%;
+  }
 
-    .responseText {
-        font-size: 1rem;
-        padding: 1rem;
-    }
+  .responseText {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .blackHoleInterface {
-        padding: 2rem 0;
-    }
+  .blackHoleInterface {
+    padding: 2rem 0;
+  }
 
-    .blackHoleContainer {
-        transform: scale(0.75);
-        margin: 1rem 0;
-    }
+  .interfaceContainer {
+    margin-top: 120px;
+    /* Menos espacio en móviles */
+  }
 
-    .promptText {
-        font-size: 1rem;
-    }
+  .logoContainer {
+    top: 15%;
+    /* Logo más arriba en móviles */
+  }
 
-    .textArea {
-        min-height: 80px;
-    }
+  .animatedLogo {
+    width: 40%;
+    /* Logo proporcionalmente más grande */
+  }
+
+  .promptText {
+    font-size: 1rem;
+  }
+
+  .textArea {
+    min-height: 80px;
+  }
 }
 
 /* Theme-specific styles */
 .darkTheme {
-    --gold-color: rgba(212, 175, 55, 1);
-    --gold-light: rgba(212, 175, 55, 0.4);
-    --gold-dark: rgba(133, 117, 78, 1);
+  --gold-color: rgba(212, 175, 55, 1);
+  --gold-light: rgba(212, 175, 55, 0.4);
+  --gold-dark: rgba(133, 117, 78, 1);
 }
 
 /* Enhanced focus states for accessibility */
@@ -445,19 +535,19 @@
 .cancelButton:focus,
 .micButton:focus,
 .textArea:focus {
-    outline: 2px solid rgba(212, 175, 55, 0.6);
-    outline-offset: 2px;
+  outline: 2px solid rgba(212, 175, 55, 0.6);
+  outline-offset: 2px;
 }
 
 /* Additional utility classes */
 .hidden {
-    display: none;
+  display: none;
 }
 
 .fadeIn {
-    animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
 .pulse {
-    animation: pulse 1.5s infinite ease-in-out;
+  animation: pulse 1.5s infinite ease-in-out;
 }
