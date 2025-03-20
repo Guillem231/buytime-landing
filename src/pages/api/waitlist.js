@@ -1,6 +1,29 @@
 import { createClient } from '@supabase/supabase-js';
+import rateLimit from 'express-rate-limit'; // Necesitarás instalar este paquete
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, 
+  max: 5, 
+  keyGenerator: (req) => req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+  message: { error: 'Too many requests, please try again later.' },
+});
+
+// Middleware para Next.js
+const applyMiddleware = fn => async (req, res) => {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+};
 
 export default async function handler(req, res) {
+  // Aplicar rate limiting
+  await applyMiddleware(limiter)(req, res);
+  
   // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
