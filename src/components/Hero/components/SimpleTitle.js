@@ -29,7 +29,7 @@ const SimpleTitle = () => {
     <div ref={containerRef} className={styles.simpleTitleContainer}>
       <h1 className={styles.simpleTitle}>
         <span className={styles.buyText}>
-          A K R
+          A I K R
           <span className={styles.logoContainer}>
             <img 
               src="/images/akron.svg" 
