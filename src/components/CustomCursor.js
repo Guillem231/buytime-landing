@@ -24,13 +24,21 @@ const CustomCursor = () => {
       onRepeat: () => {
         posX += (mouseX - posX) / 10;
         posY += (mouseY - posY) / 10;
+        
+        // Usar transform para centrar exactamente el cursor
         gsap.set(cursor, {
           left: mouseX,
-          top: mouseY
+          top: mouseY,
+          xPercent: -50,
+          yPercent: -50
         });
+        
+        // Hacer lo mismo con el follower
         gsap.set(follower, {
-          left: posX - 6,
-          top: posY - 6
+          left: posX,
+          top: posY,
+          xPercent: -50,
+          yPercent: -50
         });
       }
     });
