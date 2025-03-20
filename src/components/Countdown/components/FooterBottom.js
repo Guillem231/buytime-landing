@@ -6,17 +6,17 @@ const FooterBottom = () => {
   return (
     <div className={styles.footerBottom}>
       <div className={styles.copyright}>
-        © {new Date().getFullYear()} BuyTimeApp. All rights reserved.
+        © {new Date().getFullYear()} Aikron. All rights reserved.
       </div>
       
       <div className={styles.socialLinks}>
-        <a href="#" className={styles.socialLink}>
+        {/* <a href="#" className={styles.socialLink}>
           <i className="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.instagram.com/buytimeapp/?hl=es" className={styles.socialLink}>
+        </a> */}
+        <a href="https://www.instagram.com/aikron.ai/?hl=es" className={styles.socialLink}>
           <i className="fab fa-instagram"></i>
         </a>
-        <a href="https://www.linkedin.com/company/justbuytime/" className={styles.socialLink}>
+        <a href="https://www.linkedin.com/company/aikronai/" className={styles.socialLink}>
           <i className="fab fa-linkedin"></i>
         </a>
       </div>

@@ -33,7 +33,7 @@ const MobileBlocker = () => {
           <h2 className={styles.title}>Desktop Experience Only</h2>
           
           <div className={styles.message}>
-            <p>BuyTime's immersive platform requires a desktop or laptop to display advanced visual effects.</p>
+            <p>AIKRON's immersive platform requires a desktop or laptop to display advanced visual effects.</p>
             
             <div className={styles.separator}></div>
             

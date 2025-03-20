@@ -1,5 +1,5 @@
 export const heroText = {
-  title: "BUYTIME",
+  title: "AIKRON",
   subtitle: "Transform Your Time into Infinite Possibilities"
 };
 
