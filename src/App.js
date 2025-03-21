@@ -9,6 +9,7 @@ import BlackHole from './components/BlackHole';
 import CountdownFooter from './components/Countdown';
 import MobileBlocker from './components/MobileBlocker';
 import MobileParticleBackground from './components/MobileParticleBackground';
+import PageLoader from './components/Loader/PageLoader'; // Importa el nuevo PageLoader
 
 import './styles/main.css';
 
@@ -55,6 +56,7 @@ function App() {
 
   return (
     <div className="App">
+      <PageLoader /> {/* Añade el PageLoader antes del BrowserRouter */}
       <BrowserRouter>
         {/* <MobileBlocker />  */}
         {!isMobile && <CustomCursor />}

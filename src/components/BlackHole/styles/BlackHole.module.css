@@ -33,7 +33,7 @@
 /* Logo container */
 .logoContainer {
   position: absolute;
-  top: 35%;
+  top: clamp(20%, 30vh, 35%);
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -45,7 +45,7 @@
 }
 
 .animatedLogo {
-  width: 30%;
+  width: clamp(120px, 30%, 300px);
   max-width: 300px;
   height: auto;
   transition: filter 0.3s ease;
@@ -102,7 +102,7 @@
   position: relative;
   max-width: 600px;
   width: 100%;
-  margin-top: 180px;
+  margin-top: clamp(120px, 25vh, 220px);
   /* Espacio para dejar el logo arriba */
   display: flex;
   flex-direction: column;
@@ -467,14 +467,12 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .interfaceContainer {
-    margin-top: 150px;
-    /* Menos espacio en tablets */
-  }
-
-  .logoContainer {
-    top: 20%;
-    /* Logo más arriba en tablets */
-  }
+      margin-top: clamp(100px, 20vh, 150px);
+    }
+  
+    .logoContainer {
+      top: 25%;
+    }
 
   .buttonContainer {
     flex-direction: column;
@@ -491,22 +489,27 @@
     font-size: 1rem;
     padding: 1rem;
   }
+    .animatedLogo {
+      width: clamp(100px, 25%, 250px);
+    }
 }
 
 @media (max-width: 480px) {
-  .blackHoleInterface {
-    padding: 2rem 0;
-  }
-
-  .interfaceContainer {
-    margin-top: 120px;
-    /* Menos espacio en móviles */
-  }
-
-  .logoContainer {
-
-    /* Logo más arriba en móviles */
-  }
+    .blackHoleInterface {
+        padding: 2rem 0;
+      }
+    
+      .interfaceContainer {
+        margin-top: clamp(90px, 18vh, 120px);
+      }
+    
+      .logoContainer {
+        top: 20%;
+      }
+    
+      .animatedLogo {
+        width: clamp(80px, 20%, 200px);
+      }
 
 
 
