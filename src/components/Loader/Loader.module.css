@@ -27,8 +27,8 @@
 }
 
 .circle {
-  width: 20px;
-  height: 20px;
+  width: 5px;
+  height: 5px;
   position: absolute;
   border-radius: 50%;
   background-color: #D4AF37; /* Gold color */

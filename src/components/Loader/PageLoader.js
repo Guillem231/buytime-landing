@@ -32,11 +32,11 @@ const PageLoader = () => {
   return (
     <div className={styles.pageLoaderOverlay}>
       <div className={styles.pageLoaderContainer}>
-        <div className={styles.loaderAnimation}>
+        {/* <div className={styles.loaderAnimation}>
           <div className={styles.circle}></div>
           <div className={styles.circle}></div>
           <div className={styles.circle}></div>
-        </div>
+        </div> */}
         <div className={styles.loadingText}>
           <span>L</span>
           <span>O</span>

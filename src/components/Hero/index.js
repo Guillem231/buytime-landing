@@ -9,7 +9,7 @@ const HeroSection = () => {
   
   return (
     <section ref={containerRef} className={styles.heroSection}>
-      {isMobile && <KinectBackground showGUI={true} /> }
+      {isMobile && <KinectBackground showGUI={false} /> }
       {<SimpleTitle />}
     </section>
   );

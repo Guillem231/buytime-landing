@@ -8,7 +8,7 @@
   
     return isMobile ? 
       null : 
-      <DesktopKinectBackground showGUI={showGUI} />;
+      <DesktopKinectBackground showGUI={false} />;
   };
 
   export default KinectBackground;
