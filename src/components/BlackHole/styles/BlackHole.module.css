@@ -45,7 +45,7 @@
 }
 
 .animatedLogo {
-  width: clamp(120px, 30%, 300px);
+  width: clamp(150px, 30%, 300px);
   max-width: 300px;
   height: auto;
   transition: filter 0.3s ease;
@@ -490,7 +490,7 @@
     padding: 1rem;
   }
     .animatedLogo {
-      width: clamp(100px, 25%, 250px);
+      width: clamp(150px, 30%, 300px);
     }
 }
 
@@ -500,7 +500,7 @@
       }
     
       .interfaceContainer {
-        margin-top: clamp(90px, 18vh, 120px);
+        margin-top: clamp(120px, 18vh, 120px);
       }
     
       .logoContainer {
@@ -508,8 +508,7 @@
       }
     
       .animatedLogo {
-        width: clamp(80px, 20%, 200px);
-      }
+      width: clamp(150px, 30%, 300px);      }
 
 
 
